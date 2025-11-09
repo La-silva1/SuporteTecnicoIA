@@ -1,4 +1,4 @@
-# ApiCadastro - API de Suporte Técnico
+# API de Suporte Técnico
 
 Esta é uma API RESTful desenvolvida em ASP.NET Core para um sistema de cadastro e gerenciamento de chamados de suporte técnico.
 
