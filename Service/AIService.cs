@@ -14,6 +14,7 @@ namespace ApiCadastro.Service
 
         public AIService(IConfiguration configuration)
         {
+            // Obtém a chave da API Gemini do appsettings.json
             _apiKey = configuration["Gemini:ApiKey"]
                 ?? throw new InvalidOperationException("Gemini:ApiKey não configurada. Verifique appsettings.json ou appsettings.Development.json.");
 
@@ -22,7 +23,7 @@ namespace ApiCadastro.Service
 
         public async Task<string> GenerateContentAsync(string prompt)
         {
-            // CORRIGIDO: O modelo foi alterado para gemini-2.5-flash, que é suportado na API pública v1.
+            // Endpoint do modelo Gemini 2.5 Flash
             var url = $"https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key={_apiKey}";
 
             var fullPrompt = $"Você é um assistente técnico. Gere uma resposta clara, empática e útil para o usuário com base no problema: '{prompt}'";
@@ -31,14 +32,14 @@ namespace ApiCadastro.Service
             {
                 contents = new[]
                 {
-            new
-            {
-                parts = new[]
-                {
-                    new { text = fullPrompt }
+                    new
+                    {
+                        parts = new[]
+                        {
+                            new { text = fullPrompt }
+                        }
+                    }
                 }
-            }
-        }
             };
 
             try
@@ -64,6 +65,7 @@ namespace ApiCadastro.Service
             }
             catch (Exception ex)
             {
+                // Captura erros de rede ou de parsing
                 return $"Erro ao se comunicar com o Gemini: {ex.Message}";
             }
         }
