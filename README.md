@@ -70,6 +70,21 @@ Esta é uma API RESTful desenvolvida em ASP.NET Core para um sistema de cadastro
     ```
     A API estará disponível com a interface do Swagger em: `http://localhost:5268/swagger/index.html`
 
+## Testes
+
+O projeto possui uma suíte de testes para garantir a qualidade e o funcionamento correto da API. Os testes cobrem:
+
+-   **Testes de Unidade**: Verificam a lógica de componentes isolados, como os controllers.
+-   **Testes de Integração**: Garantem que os diferentes componentes da API funcionem corretamente em conjunto, incluindo a interação com o banco de dados em memória.
+-   **Testes de Segurança**: Verificam se os endpoints protegidos requerem autenticação e se o acesso é negado sem um token válido.
+-   **Testes de Validação**: Asseguram que as regras de validação nos modelos de entrada (DTOs) funcionam como esperado, rejeitando dados inválidos.
+
+Para executar os testes, utilize o seguinte comando na raiz do projeto:
+
+```bash
+dotnet test
+```
+
 ## Endpoints da API
 
 A seguir estão os principais endpoints disponíveis na API. A maioria requer um token de autenticação no header `Authorization`.
