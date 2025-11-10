@@ -10,19 +10,20 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=Server=db;Database=ApiCadastroDB;User Id=sa;Password=Password@123;TrustServerCertificate=true
+      - Jwt__Key=minha-chave-secreta-super-segura-com-pelo-menos-32-caracteres
+      - Jwt__Issuer=ApiCadastro
+      - Jwt__Audience=ApiCadastro
     depends_on:
       - db
 
   db:
     image: "mcr.microsoft.com/mssql/server:2019-latest"
     platform: linux/amd64
+    user: "0:0"
     environment:
       SA_PASSWORD: "Password@123"
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
     volumes:
-      - db_data:/var/opt/mssql
-
-volumes:
-  db_data:
+      - ./docker_volumes/db_data:/var/opt/mssql
