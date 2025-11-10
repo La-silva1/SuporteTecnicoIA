@@ -27,6 +27,38 @@ Esta é uma API RESTful desenvolvida em ASP.NET Core para um sistema de cadastro
 
 ## Como Executar o Projeto
 
+### Executando com Docker Compose
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone git@github.com:La-silva1/SuporteTecnicoIA.git
+    cd ApiCadastro
+    ```
+
+2.  **Configure as Chaves e Conexões:**
+    - Adicione sua API Key do Gemini no arquivo `appsettings.Development.json`.
+    ```json
+    {
+      "GeminiApiKey": "SUA_API_KEY_DO_GEMINI_AQUI"
+    }
+    ```
+
+3.  **Inicie os contêineres:**
+    ```bash
+    docker-compose up -d
+    ```
+
+4.  **Aplique as Migrations:**
+    Acesse o contêiner da aplicação e execute o comando para criar as tabelas no banco de dados.
+    ```bash
+    docker-compose exec app dotnet ef database update
+    ```
+
+5.  **Acesse a aplicação:**
+    A API estará disponível com a interface do Swagger em: `http://localhost:8080/swagger/index.html`
+
+### Executando Localmente
+
 1.  **Clone o repositório:**
     ```bash
     git clone git@github.com:La-silva1/SuporteTecnicoIA.git
