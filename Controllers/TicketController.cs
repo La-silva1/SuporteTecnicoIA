@@ -44,7 +44,7 @@ namespace ApiCadastro.Controllers
             // Gera resposta automática via IA
             var respostaIA = await _aiService.GenerateContentAsync(request.Descricao);
             ticket.RespostaIA = respostaIA;
-            ticket.Status = "Respondido"; // Atualiza o status do chamado para respondido
+            ticket.Status = "Respondido"; // Atualiza o status do chamado para respondido sempre que a IA responder
             Console.WriteLine($"Ticket Status before second save: {ticket.Status}");
             await _context.SaveChangesAsync();
 
