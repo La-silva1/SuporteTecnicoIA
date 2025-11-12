@@ -8,6 +8,19 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+const string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+    policy =>
+    {
+        policy.WithOrigins("http://localhost:8081")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+         
+
 // Configuração do Banco de Dados
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -89,10 +102,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors(myAllowSpecificOrigins);
 
 // Ordem correta: Authentication antes de Authorization
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

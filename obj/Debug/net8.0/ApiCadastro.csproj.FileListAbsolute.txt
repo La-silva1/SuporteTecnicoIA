@@ -190,3 +190,4 @@
 /Users/laissilva/Projects/SuporteTecnico/ApiCadastro/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/laissilva/Projects/SuporteTecnico/ApiCadastro/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 /Users/laissilva/Projects/SuporteTecnico/ApiCadastro/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/laissilva/Projects/SuporteTecnico/ApiCadastro/obj/Debug/net8.0/ApiCadastro.sourcelink.json
