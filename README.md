@@ -20,6 +20,12 @@ Esta é uma API RESTful desenvolvida em ASP.NET Core para um sistema de cadastro
 - [JWT (JSON Web Tokens)](https://jwt.io/) para autenticação
 - [Docker](https://www.docker.com/)
 
+## Frontend
+
+O front-end para esta API foi desenvolvido em React e está disponível em um repositório separado. Para clonar e executar o projeto front-end, siga as instruções no repositório correspondente.
+
+- **Repositório:** [https://github.com/La-silva1/SuporteTecnicoIA-front-end](https://github.com/La-silva1/SuporteTecnicoIA-front-end)
+
 ## Como Executar o Projeto com Docker
 
 Siga os passos abaixo para configurar e executar a aplicação localmente usando Docker.
