@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: myAllowSpecificOrigins,
     policy =>
     {
-        policy.WithOrigins("http://localhost:8081", "https://srv1119481.hstgr.cloud/api")
+        policy.WithOrigins("http://localhost:8081", "http://srv1119481.hstgr.cloud")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
